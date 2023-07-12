@@ -1,5 +1,7 @@
 Revision history for Perl extension Mac::FSEvents.
 
+{{$NEXT}}
+
 0.14    2017-12-02 09:30:00
         - Look for macOS SDK under command line tools installation in addition to other places
         - Fix building on Perl 5.26 and beyond (thanks, Fayland Lam!)

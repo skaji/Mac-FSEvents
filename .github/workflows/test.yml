@@ -1,0 +1,33 @@
+name: test
+
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  pull_request:
+
+jobs:
+  macos:
+    name: macos ${{ matrix.perl }}
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        include:
+          - perl: /usr/bin/perl
+            prove: /usr/bin/prove
+            cpm-option: --sudo
+          - perl: /usr/local/bin/perl
+            prove: /usr/local/bin/prove
+            cpm-option: ''
+    steps:
+      - uses: actions/checkout@v3
+      - name: perl -V
+        run: ${{ matrix.perl }} -V
+      - name: Install Dependencies
+        run: curl -fsSL --compressed https://raw.githubusercontent.com/skaji/cpm/main/cpm | ${{ matrix.perl }} - install -g ${{ matrix.cpm-option }} --with-develop --with-recommends --show-build-log-on-failure
+      - name: Build
+        run: ${{ matrix.perl }} Makefile.PL && make
+      - name: Run Tests
+        run: make test
