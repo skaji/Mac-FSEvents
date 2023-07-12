@@ -1,0 +1,66 @@
+{
+   "abstract" : "Monitor a directory structure for changes",
+   "author" : [
+      "Andy Grundman, <andy@hybridized.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 6.030, CPAN::Meta::Converter version 2.150010",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : 2
+   },
+   "name" : "Mac-FSEvents",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "perl" : "5.008008"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0.99",
+            "autodie" : "0"
+         }
+      }
+   },
+   "provides" : {
+      "Mac::FSEvents" : {
+         "file" : "lib/Mac/FSEvents.pm",
+         "version" : "0.14"
+      },
+      "Mac::FSEvents::Event" : {
+         "file" : "lib/Mac/FSEvents/Event.pm"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/skaji/Mac-FSEvents/issues"
+      },
+      "homepage" : "https://github.com/skaji/Mac-FSEvents",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/skaji/Mac-FSEvents.git",
+         "web" : "https://github.com/skaji/Mac-FSEvents"
+      }
+   },
+   "version" : "0.14",
+   "x_contributors" : [
+      "Doug Bell <madcityzen@gmail.com>",
+      "Fayland Lam <fayland@gmail.com>",
+      "Rob Hoelz <rob@hoelz.ro>",
+      "Shoichi Kaji <skaji@cpan.org>"
+   ],
+   "x_generated_by_perl" : "v5.38.0",
+   "x_serialization_backend" : "Cpanel::JSON::XS version 4.37",
+   "x_spdx_expression" : "Artistic-1.0-Perl OR GPL-1.0-or-later"
+}
+

@@ -1,0 +1,8 @@
+prereqs:
+  runtime:
+    requires:
+      perl: { version: '5.008008' }
+  test:
+    requires:
+      Test::More: { version: '0.99' }
+      autodie:
