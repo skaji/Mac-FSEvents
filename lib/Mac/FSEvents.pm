@@ -250,10 +250,6 @@ Stop watching.
 
 =back
 
-=head1 SEE ALSO
-
-http://developer.apple.com/documentation/Darwin/Conceptual/FSEvents_ProgGuide
-
 =head1 AUTHOR
 
 Andy Grundman, E<lt>andy@hybridized.orgE<gt>
