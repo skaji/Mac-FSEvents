@@ -2,6 +2,7 @@ package Mac::FSEvents;
 
 use 5.008008;
 use strict;
+use warnings;
 use base 'Exporter';
 
 use Mac::FSEvents::Event;
