@@ -14,8 +14,8 @@ our %EXPORT_TAGS = ( flags => \@EXPORT_OK );
 
 my @maybe_export_ok = qw(IGNORE_SELF FILE_EVENTS);
 
-require XSLoader;
-XSLoader::load('Mac::FSEvents', $VERSION);
+use XSLoader;
+XSLoader::load(__PACKAGE__, $VERSION);
 
 my %const_args;
 
