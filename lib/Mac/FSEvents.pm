@@ -254,6 +254,8 @@ Stop watching.
 
 Andy Grundman, E<lt>andy@hybridized.orgE<gt>
 
+Rob Hoelz, <rob@hoelz.ro>
+
 =head1 COPYRIGHT AND LICENSE
 
 Copyright (C) 2009 by Andy Grundman

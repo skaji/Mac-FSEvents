@@ -55,7 +55,7 @@ my %args = (
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Monitor a directory structure for changes",
-  "AUTHOR" => "Andy Grundman, <andy\@hybridized.org>",
+  "AUTHOR" => "Andy Grundman <andy\@hybridized.org>, Rob Hoelz <rob\@hoelz.ro>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },

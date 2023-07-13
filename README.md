@@ -147,6 +147,8 @@ Event monitoring occurs in a separate C thread from the rest of your application
 
 Andy Grundman, <andy@hybridized.org>
 
+Rob Hoelz, <rob@hoelz.ro>
+
 # COPYRIGHT AND LICENSE
 
 Copyright (C) 2009 by Andy Grundman
