@@ -65,8 +65,7 @@ my %WriteMakefileArgs = (
   "NAME" => "Mac::FSEvents",
   "PREREQ_PM" => {},
   "TEST_REQUIRES" => {
-    "Test::More" => "0.99",
-    "autodie" => 0
+    "Test::More" => "0.99"
   },
   "VERSION" => "0.20",
   "test" => {
@@ -80,8 +79,7 @@ my %WriteMakefileArgs = (
 );
 
 my %FallbackPrereqs = (
-  "Test::More" => "0.99",
-  "autodie" => 0
+  "Test::More" => "0.99"
 );
 
 unless ( eval { ExtUtils::MakeMaker->VERSION('6.63_03') } ) {

@@ -1,6 +1,5 @@
 use strict;
 use warnings;
-use autodie;
 
 use Cwd qw( getcwd abs_path );
 use File::Path qw( make_path );

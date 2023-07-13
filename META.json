@@ -26,8 +26,7 @@
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.99",
-            "autodie" : "0"
+            "Test::More" : "0.99"
          }
       }
    },
