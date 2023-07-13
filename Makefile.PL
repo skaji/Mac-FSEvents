@@ -55,7 +55,7 @@ my %args = (
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Monitor a directory structure for changes",
-  "AUTHOR" => "Andy Grundman, <andy\@hybridized.org>",
+  "AUTHOR" => "Andy Grundman <andy\@hybridized.org>, Rob Hoelz <rob\@hoelz.ro>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
@@ -65,8 +65,7 @@ my %WriteMakefileArgs = (
   "NAME" => "Mac::FSEvents",
   "PREREQ_PM" => {},
   "TEST_REQUIRES" => {
-    "Test::More" => "0.99",
-    "autodie" => 0
+    "Test::More" => "0.99"
   },
   "VERSION" => "0.20",
   "test" => {
@@ -80,8 +79,7 @@ my %WriteMakefileArgs = (
 );
 
 my %FallbackPrereqs = (
-  "Test::More" => "0.99",
-  "autodie" => 0
+  "Test::More" => "0.99"
 );
 
 unless ( eval { ExtUtils::MakeMaker->VERSION('6.63_03') } ) {

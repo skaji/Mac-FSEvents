@@ -2,7 +2,8 @@ package Mac::FSEvents;
 
 use 5.008008;
 use strict;
-use base 'Exporter';
+use warnings;
+use Exporter 'import';
 
 use Mac::FSEvents::Event;
 
@@ -13,8 +14,8 @@ our %EXPORT_TAGS = ( flags => \@EXPORT_OK );
 
 my @maybe_export_ok = qw(IGNORE_SELF FILE_EVENTS);
 
-require XSLoader;
-XSLoader::load('Mac::FSEvents', $VERSION);
+use XSLoader;
+XSLoader::load(__PACKAGE__, $VERSION);
 
 my %const_args;
 
@@ -249,13 +250,11 @@ Stop watching.
 
 =back
 
-=head1 SEE ALSO
-
-http://developer.apple.com/documentation/Darwin/Conceptual/FSEvents_ProgGuide
-
 =head1 AUTHOR
 
 Andy Grundman, E<lt>andy@hybridized.orgE<gt>
+
+Rob Hoelz, <rob@hoelz.ro>
 
 =head1 COPYRIGHT AND LICENSE
 
