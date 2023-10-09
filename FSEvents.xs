@@ -243,6 +243,8 @@ stop_impl(FSEvents *self)
 
 MODULE = Mac::FSEvents      PACKAGE = Mac::FSEvents
 
+PROTOTYPES: DISABLE
+
 void
 _new (char *klass, HV *args)
 PPCODE:
