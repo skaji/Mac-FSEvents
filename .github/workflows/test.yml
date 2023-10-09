@@ -22,7 +22,7 @@ jobs:
             prove: /usr/local/bin/prove
             cpm-option: ''
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: perl -V
         run: ${{ matrix.perl }} -V
       - name: Install Dependencies
@@ -30,4 +30,4 @@ jobs:
       - name: Build
         run: ${{ matrix.perl }} Makefile.PL && make
       - name: Run Tests
-        run: make test
+        run: ${{ matrix.prove }} -b t xt

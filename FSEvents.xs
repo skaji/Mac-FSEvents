@@ -386,12 +386,11 @@ PPCODE:
 
     fh = fdopen( respipe_read_copy, "r" );
 
-    glob = (GV *) SvREFCNT_inc(newGVgen("Mac::FSEvents"));
+    glob = (GV *) newGVgen("Mac::FSEvents");
     fp   = PerlIO_importFILE(fh, 0);
     do_open(glob, "+<&", 3, FALSE, 0, 0, fp);
 
-    XPUSHs( sv_2mortal( newRV((SV *) glob) ) );
-    SvREFCNT_dec(glob);
+    XPUSHs( sv_2mortal( newRV_noinc((SV *) glob) ) );
     return;
 handle_errors:
     if(self->respipe[0] >= 0) {
