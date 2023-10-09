@@ -5,3 +5,6 @@ prereqs:
   test:
     requires:
       Test::More: { version: '0.99' }
+  develop:
+    requires:
+      Test::LeakTrace:
