@@ -1,6 +1,6 @@
 package Mac::FSEvents;
 
-use 5.008008;
+use v5.10.1;
 use strict;
 use warnings;
 use Exporter 'import';

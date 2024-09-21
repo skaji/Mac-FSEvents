@@ -1,9 +1,6 @@
 use strict;
 use warnings;
 
-use ExtUtils::Constant ();
-use Config ();
-
 if ($^O ne 'darwin') {
     die "OS unsupported\n";
 }
@@ -28,17 +25,18 @@ for my $c_name (@c_name) {
     };
 }
 
-ExtUtils::Constant::WriteConstants(
-    NAME => 'Mac::FSEvents',
-    NAMES => \@name,
+load_module('Dist::Build::XS');
+load_module('Dist::Build::XS::WriteConstants');
+
+my @extra_compiler_flag = (
+    '-Wall',
+    '-Wextra',
+    '-Werror',
+    '-Wno-error=deprecated-declarations',
 );
 
-my $lddlflags = join " ", grep { length $_ } (
-    $Config::Config{lddlflags},
-    "-framework CoreServices",
-    "-framework CoreFoundation",
-);
-
-my %args = (
-    LDDLFLAGS => $lddlflags,
+add_xs(
+    write_constants => { NAMES => \@name },
+    extra_compiler_flags => -d ".git" ? \@extra_compiler_flag : [],
+    extra_linker_flags => [qw(-framework CoreServices -framework CoreFoundation)],
 );

@@ -90,7 +90,7 @@ _cleanup(FSEvents *self) {
 void
 _signal_stop(
     CFFileDescriptorRef fdref,
-    CFOptionFlags callBackTypes,
+    CFOptionFlags callBackTypes PERL_UNUSED_DECL,
     void *info
 ) {
     char buf[4];
@@ -108,14 +108,14 @@ _signal_stop(
 
 void
 streamEvent(
-    ConstFSEventStreamRef streamRef,
+    ConstFSEventStreamRef streamRef PERL_UNUSED_DECL,
     void *info,
     size_t numEvents,
     void *eventPaths,
     const FSEventStreamEventFlags eventFlags[],
     const FSEventStreamEventId eventIds[]
 ) {
-    int i, n;
+    size_t i;
     char **paths = eventPaths;
 
     FSEvents *self = (FSEvents *)info;
@@ -153,8 +153,6 @@ void *
 _watch_thread(void *arg) {
     struct watch_data *wd = (struct watch_data *) arg;
     FSEvents *self        = wd->fs_events;
-
-    void *callbackInfo = (void *)self;
 
     FSEventStreamRef stream;
 
@@ -435,7 +433,6 @@ PPCODE:
 
     if ( self->respipe[0] > 0 ) {
         ssize_t bytes;
-        int read_attempts = 0;
 
         pthread_mutex_lock(&self->mutex);
 
