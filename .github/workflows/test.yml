@@ -9,20 +9,35 @@ on:
   pull_request:
 
 jobs:
-  macos:
-    name: macos ${{ matrix.perl }}
-    runs-on: macos-latest
+  perl:
     strategy:
       matrix:
         include:
-          - perl: /usr/bin/perl
+          - os: macos-13
+            perl: /usr/bin/perl
             prove: /usr/bin/prove
             cpm-option: --sudo
-          - perl: /usr/local/bin/perl
+          - os: macos-13
+            perl: /usr/local/bin/perl
             prove: /usr/local/bin/prove
             cpm-option: ''
+          - os: macos-latest
+            perl: /usr/bin/perl
+            prove: /usr/bin/prove
+            cpm-option: --sudo
+          - os: macos-latest
+            perl: /opt/homebrew/bin/perl
+            prove: /opt/homebrew/bin/prove
+            cpm-option: ''
+    name: ${{ matrix.os }} ${{ matrix.perl }}
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      - name: Show environment
+        run: |
+          uname -a
+          sw_vers
+          system_profiler SPHardwareDataType
       - name: perl -V
         run: ${{ matrix.perl }} -V
       - name: Install Dependencies
